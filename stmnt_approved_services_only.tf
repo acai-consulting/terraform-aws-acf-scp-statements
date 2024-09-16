@@ -1,7 +1,7 @@
 # Will restrict the AWS services to the listed ones for all prinvipals except the ones listed in the condition
 
 locals {
-  approved_services_only = length(var.scp_settings.allowed_services) == null ? {} : {
+  approved_services_only = length(var.scp_settings.allowed_services) == 0 ? {} : {
     "Statement" : [
       merge(
         {

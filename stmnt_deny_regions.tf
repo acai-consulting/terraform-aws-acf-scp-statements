@@ -11,7 +11,7 @@ locals {
           "Resource" : ["*"]
 
           # Global Services
-          "NotActions" = [
+          "NotAction" = [
             "a4b:*",
             "access-analyzer:*",
             "acm:*",

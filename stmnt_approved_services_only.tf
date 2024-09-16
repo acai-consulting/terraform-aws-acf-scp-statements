@@ -8,7 +8,7 @@ locals {
           "Sid" : "AllowApprovedServices"
           "Effect" : "Deny"
           "Resource" : "*"
-          "NotActions" : var.scp_settings.allowed_services
+          "NotAction" : var.scp_settings.allowed_services
         },
         local.allowed_principal_arns
       )

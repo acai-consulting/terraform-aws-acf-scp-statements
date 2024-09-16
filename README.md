@@ -12,6 +12,7 @@
 
 <!-- DESCRIPTION -->
 [Terraform][terraform-url] module to render sample statements for AWS Service Control Policies (SCPs).
+
 The rendered statements can be used with the [ACAI ACF](https://acai.gmbh/solutions/acf/) module [terraform-aws-acf-scp](https://github.com/acai-consulting/terraform-aws-acf-scp).
 
 <!-- BEGIN_TF_DOCS -->

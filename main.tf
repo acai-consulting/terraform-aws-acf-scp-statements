@@ -18,9 +18,12 @@ locals {
   }
 
   scp_statements = {
-    "approved_services_only"    = length(var.scp_settings.allowed_services) > 0 ? data.aws_iam_policy_document.approved_services_only[0].json : ""
-    "deny_regions"              = var.scp_settings.regions != null ? data.aws_iam_policy_document.deny_regions[0].json : ""
-    "protect_root_user"         = data.aws_iam_policy_document.protect_root_user.json
-    "protect_security_services" = data.aws_iam_policy_document.protect_security_services
+    "approved_services_only"    = jsonencode(local.approved_services_only)
+    "deny_regions"              = jsonencode(local.deny_regions)
+    "protect_root_user"         = jsonencode(local.protect_root_user)
+    "protect_security_services" = jsonencode(local.protect_security_services)
   }
+}
+output "protect_security_services" {
+  value = local.protect_security_services
 }

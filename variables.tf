@@ -24,7 +24,7 @@ variable "scp_settings" {
   })
   default = {
     regions = null
-    allowed_principal_arns = []      
+    allowed_principal_arns = ["hohoho"]      
     allowed_services = [
       "ec2:*",
       "s3:*",

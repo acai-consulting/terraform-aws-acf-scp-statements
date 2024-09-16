@@ -24,6 +24,3 @@ locals {
     "protect_security_services" = jsonencode(local.protect_security_services)
   }
 }
-output "protect_security_services" {
-  value = local.protect_security_services
-}

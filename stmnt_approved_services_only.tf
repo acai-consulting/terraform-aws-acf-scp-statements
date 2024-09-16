@@ -5,10 +5,10 @@ locals {
     "Statement" : [
       merge(
         {
-          "Sid" : "AllowWhitelistedServices"
+          "Sid" : "AllowApprovedServices"
           "Effect" : "Deny"
           "Resource" : "*"
-          "not_actions" : var.scp_settings.allowed_services
+          "NotActions" : var.scp_settings.allowed_services
         },
         local.allowed_principal_arns
       )

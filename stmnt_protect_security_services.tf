@@ -34,7 +34,7 @@ locals {
             # Access Analyzer
             "access-analyzer:DeleteAnalyzer"
           ],
-        }, 
+        },
         local.allowed_principal_arns
       )
     ]

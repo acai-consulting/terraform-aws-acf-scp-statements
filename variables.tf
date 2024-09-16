@@ -2,7 +2,7 @@ variable "scp_settings" {
   type = object({
     regions = optional(object({
       primary_region    = string
-      secondary_regions = optional(list(string),[])
+      secondary_regions = optional(list(string), [])
     }), null)
     allowed_principal_arns = optional(list(string), [])
     allowed_services = optional(list(string), [
@@ -23,8 +23,8 @@ variable "scp_settings" {
     ])
   })
   default = {
-    regions = null
-    allowed_principal_arns = []      
+    regions                = null
+    allowed_principal_arns = []
     allowed_services = [
       "ec2:*",
       "s3:*",
@@ -49,5 +49,5 @@ variable "scp_settings" {
       !contains(var.scp_settings.regions.secondary_regions, var.scp_settings.regions.primary_region)
     )
     error_message = "The primary region must not be included in the secondary regions."
-  }  
+  }
 }

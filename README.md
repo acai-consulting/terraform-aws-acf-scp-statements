@@ -20,14 +20,10 @@ The rendered statements can be used with the [ACAI ACF](https://acai.gmbh/soluti
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.10 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.47 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.47 |
-| <a name="provider_external"></a> [external](#provider\_external) | n/a |
+No providers.
 
 ## Modules
 
@@ -35,35 +31,20 @@ No modules.
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [aws_organizations_policy.scp_policies](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy) | resource |
-| [aws_organizations_policy_attachment.account_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy_attachment) | resource |
-| [aws_organizations_policy_attachment.ou_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_policy_attachment) | resource |
-| [aws_iam_policy_document.scp_policies](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
-| [aws_organizations_organization.organization](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/organizations_organization) | data source |
-| [aws_organizations_organizational_units.organization_inits](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/organizations_organizational_units) | data source |
-| [external_external.get_ou_ids](https://registry.terraform.io/providers/hashicorp/external/latest/docs/data-sources/external) | data source |
+No resources.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_scp_specifications"></a> [scp\_specifications](#input\_scp\_specifications) | The statements of the SCPs. | <pre>map(object({<br>    policy_name : string<br>    description : optional(string, null)<br>    statement_ids : list(string)<br>    tags : optional(map(string), {})<br>  }))</pre> | n/a | yes |
-| <a name="input_scp_statements"></a> [scp\_statements](#input\_scp\_statements) | The statements of the SCPs. | `map(string)` | n/a | yes |
-| <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | A map of default tags to assign to the SCPs. | `map(string)` | `{}` | no |
-| <a name="input_org_mgmt_reader_role_arn"></a> [org\_mgmt\_reader\_role\_arn](#input\_org\_mgmt\_reader\_role\_arn) | ARN to be assumed by the Python, to read the OU structure. Only required, if the provisioning pipeline is not in the context of the Org-Mgmt account. | `string` | `""` | no |
-| <a name="input_scp_assignments"></a> [scp\_assignments](#input\_scp\_assignments) | The assignements of SCPs. | <pre>object({<br>    ou_assignments : optional(map(list(string)), {})      # key: ou-path, value: list of scp_ids to be assinged<br>    account_assignments : optional(map(list(string)), {}) # key: account_id, value: list of scp_ids to be assinged<br>  })</pre> | `null` | no |
+| <a name="input_scp_settings"></a> [scp\_settings](#input\_scp\_settings) | n/a | <pre>object({<br>    regions = optional(object({<br>      primary_region    = string<br>      secondary_regions = optional(list(string), [])<br>    }), null)<br>    allowed_principal_arns = optional(list(string), [])<br>    allowed_services = optional(list(string), [<br>      "ec2:*",<br>      "s3:*",<br>      "iam:*",<br>      "lambda:*",<br>      "ecr:*",<br>      "ecs:*",<br>      "logs:*",<br>      "apigateway:*",<br>      "rds:*",<br>      "redshift:*",<br>      "elasticache:*",<br>      "cloudwatch:*",<br>      "secretsmanager:*"<br>      # add more as needed<br>    ])<br>  })</pre> | <pre>{<br>  "allowed_principal_arns": [],<br>  "allowed_services": [<br>    "ec2:*",<br>    "s3:*",<br>    "iam:*",<br>    "lambda:*",<br>    "ecr:*",<br>    "ecs:*",<br>    "logs:*",<br>    "apigateway:*",<br>    "rds:*",<br>    "redshift:*",<br>    "elasticache:*",<br>    "cloudwatch:*",<br>    "secretsmanager:*"<br>  ],<br>  "regions": null<br>}</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_aws_organizations_policy_account_attachment"></a> [aws\_organizations\_policy\_account\_attachment](#output\_aws\_organizations\_policy\_account\_attachment) | n/a |
-| <a name="output_aws_organizations_policy_ou_attachment"></a> [aws\_organizations\_policy\_ou\_attachment](#output\_aws\_organizations\_policy\_ou\_attachment) | n/a |
-| <a name="output_ou_paths_with_id"></a> [ou\_paths\_with\_id](#output\_ou\_paths\_with\_id) | n/a |
-| <a name="output_ou_root_id"></a> [ou\_root\_id](#output\_ou\_root\_id) | n/a |
-| <a name="output_scp_policies_details"></a> [scp\_policies\_details](#output\_scp\_policies\_details) | n/a |
+| <a name="output_scp_statements"></a> [scp\_statements](#output\_scp\_statements) | n/a |
+| <a name="output_scp_statements_lengths"></a> [scp\_statements\_lengths](#output\_scp\_statements\_lengths) | n/a |
 <!-- END_TF_DOCS -->
 
 <!-- AUTHORS -->

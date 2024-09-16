@@ -3,17 +3,15 @@
 locals {
   approved_services_only = length(var.scp_settings.allowed_services) == null ? {} : {
     "Statement" : [
-      {
-        statement = merge(
-          {
-            "Sid" : "AllowWhitelistedServices"
-            "Effect" : "Deny"
-            "Resource" : "*"
-            "not_actions" : var.scp_settings.allowed_services
-          },
-          local.allowed_principal_arns
-        )
-      }
+      merge(
+        {
+          "Sid" : "AllowWhitelistedServices"
+          "Effect" : "Deny"
+          "Resource" : "*"
+          "not_actions" : var.scp_settings.allowed_services
+        },
+        local.allowed_principal_arns
+      )
     ]
   }
 }

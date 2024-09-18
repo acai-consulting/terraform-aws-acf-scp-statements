@@ -20,6 +20,8 @@ locals {
   scp_statements = {
     "approved_services_only"    = jsonencode(local.approved_services_only)
     "deny_regions"              = jsonencode(local.deny_regions)
+    "protect_financials"        = jsonencode(local.protect_financials)
+    "protect_member"            = jsonencode(local.protect_member)
     "protect_root_user"         = jsonencode(local.protect_root_user)
     "protect_security_services" = jsonencode(local.protect_security_services)
   }

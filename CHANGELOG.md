@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/acai-consulting/terraform-aws-acf-scp-statements/compare/1.0.0...1.0.1) (2024-09-18)
+
+
+### Bug Fixes
+
+* add statements from welldone.cloud ([#2](https://github.com/acai-consulting/terraform-aws-acf-scp-statements/issues/2)) ([a84643e](https://github.com/acai-consulting/terraform-aws-acf-scp-statements/commit/a84643ea341562a69a14c663a086277310610f2a))
+
 ## 1.0.0 (2024-09-16)
 
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2](https://github.com/acai-consulting/terraform-aws-acf-scp-statements/compare/1.0.1...1.0.2) (2024-09-19)
+
+
+### Bug Fixes
+
+* ArnNotLike ([#3](https://github.com/acai-consulting/terraform-aws-acf-scp-statements/issues/3)) ([15f5447](https://github.com/acai-consulting/terraform-aws-acf-scp-statements/commit/15f544766dbe30720db4a465b9c804ce7605eb10))
+
 ## [1.0.1](https://github.com/acai-consulting/terraform-aws-acf-scp-statements/compare/1.0.0...1.0.1) (2024-09-18)
 
 

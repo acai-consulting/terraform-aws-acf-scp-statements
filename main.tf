@@ -11,7 +11,7 @@ terraform {
 locals {
   allowed_principal_arns = length(var.scp_settings.allowed_principal_arns) == 0 ? {} : {
     "Condition" = {
-      "StringNotEquals" = {
+      "ArnNotLike" = {
         "aws:PrincipalARN" = var.scp_settings.allowed_principal_arns
       }
     }
